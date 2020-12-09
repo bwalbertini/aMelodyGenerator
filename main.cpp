@@ -7,7 +7,8 @@
 //                          This program generates a melody consisting                                                  of a 4-key progression (3 - 2 - 1 - 3),                                                     layered over a 2-chord progression (3 - 6).
 
 #include <iostream>
-#include "../melodyGenerator/CFugueLib.h"
+#include <list>
+#include <string>
 
 //This class will store our chord progression seperately to be appended to our master melody list later.
 class chords {
@@ -128,6 +129,7 @@ int main(int argc, const char * argv[]) {
             keysObject.secondKey = "A";
             break;
         }
+
     //Ask the user to select their third key and determine which they chose with a switch statement.
     std::cout << "\nSelect key 3 / 4 for a note progression to play over your chords...\n1: C\n2: E\n3: G\n4: F\n5: D\n6: B\n7: A\n\n";
     std::cin >> keyThree;
@@ -185,9 +187,30 @@ int main(int argc, const char * argv[]) {
             keysObject.fourthKey = "A";
             break;
         }
+
+        std::cout << "\n\nChords: " + chordsObject.firstChord + "  " + chordsObject.secondChord + "\n";
+
+        std::cout << "\nKeys: " + keysObject.firstKey + " " +keysObject.secondKey + " " + keysObject.thirdKey + " " + keysObject.fourthKey;
+
+        
 }
 
+class chordsList{
+    public:
+        std::list<std::string> chordList;
+};
 
+void chordsProg(){
+  chordsList chordsListObject;
 
+}
 
+class keysList {
+    public:
+        std::list<std::string> keyList;
+};
 
+void keysProg(){
+  keysList keysListObject;
+
+}
